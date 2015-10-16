@@ -38,6 +38,7 @@ Ext.define('CustomApp', {
 	_onLoad: function() {
 		this.add({
 			xtype: 'rallycardboard',
+			width: '99%',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
 			readOnly: true,
