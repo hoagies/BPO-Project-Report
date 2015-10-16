@@ -54,13 +54,12 @@ Ext.define('CustomApp', {
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
 			// context: this.getContext(),
-			context: {
-				project: project_oid,
-				projectScopeDown: true,
-				projectScopeUp: false
-			},
 			storeConfig: {
-				project: 'Radian',
+				context: {
+					project: project_oid,
+					projectScopeDown: true,
+					projectScopeUp: false
+				},
 				filters: [this._getFilter()]
 			},
 			columnConfig: {
