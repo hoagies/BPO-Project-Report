@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random App Name71483</title>
+
+    <script type="text/javascript" src="https://rally1.rallydev.com/apps/2.0/sdk.js"></script>
+
+    <script type="text/javascript">
+        Rally.onReady(function () {
+                Ext.define("CustomApp",{extend:"Rally.app.App",componentCls:"app",launch:function(){this.add({xtype:"rallycombobox",width:600,fieldLabel:"Select Initiative:",displayTpl:Ext.create("Ext.XTemplate",'<tpl for=".">',"{FormattedID} - {Name}","</tpl>"),tpl:Ext.create("Ext.XTemplate",'<tpl for=".">','<div class="x-boundlist-item">{FormattedID} - {Name}</div>',"</tpl>"),storeConfig:{autoLoad:!0,model:"PortfolioItem/Initiative",fetch:["FormattedID","Name"],sorters:[{property:"ObjectID",direction:"ASC"}],remoteGroup:!1,remoteSort:!1,remoteFilter:!1,limit:1/0},listeners:{select:this._onSelect,ready:this._onLoad,scope:this}})},_onLoad:function(){this.add({xtype:"rallycardboard",types:["PortfolioItem/Feature"],attribute:"State",context:this.getContext(),storeConfig:{filters:[this._getFilter()]},columnConfig:{plugins:[{ptype:"rallycolumncardcounter"}]},cardConfig:{showIconsAndHighlightBorder:!0,editable:!0,fields:["PercentDoneByStoryCount"],showAge:!0}})},_onSelect:function(){var board=this.down("rallycardboard");board.refresh({storeConfig:{filters:[this._getFilter()]}})},_getFilter:function(){var combo=this.down("rallycombobox");return{property:"Parent.Parent",operator:"=",value:combo.getValue()}}});
+
+            Rally.launchApp('CustomApp', {
+                name:"Random App Name71483",
+	            parentRepos:""
+            });
+
+        });
+    </script>
+
+
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+</body>
+</html>
