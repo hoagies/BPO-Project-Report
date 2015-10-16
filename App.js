@@ -40,6 +40,7 @@ Ext.define('CustomApp', {
 			xtype: 'rallycardboard',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
+			readOnly: true,
 			context: this.getContext(),
 			storeConfig: {
 				filters: [this._getFilter()]
@@ -50,7 +51,7 @@ Ext.define('CustomApp', {
 				]
 			},
 			cardConfig: {
-				showIconsAndHighlightBorder: true,
+				showIconsAndHighlightBorder: false,
 				editable: false,
 				fields: ['PercentDoneByStoryCount'],
 				showAge: true

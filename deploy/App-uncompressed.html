@@ -49,6 +49,7 @@
 			xtype: 'rallycardboard',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
+			readOnly: true,
 			context: this.getContext(),
 			storeConfig: {
 				filters: [this._getFilter()]
@@ -59,7 +60,7 @@
 				]
 			},
 			cardConfig: {
-				showIconsAndHighlightBorder: true,
+				showIconsAndHighlightBorder: false,
 				editable: false,
 				fields: ['PercentDoneByStoryCount'],
 				showAge: true
