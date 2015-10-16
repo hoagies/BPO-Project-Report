@@ -38,12 +38,11 @@ Ext.define('CustomApp', {
 	_onLoad: function() {
 		this.add({
 			xtype: 'rallycardboard',
-			width: '99%',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
-			readOnly: true,
-			context: this.getContext(),
+			// context: this.getContext(),
 			storeConfig: {
+				project: 'Radian',
 				filters: [this._getFilter()]
 			},
 			columnConfig: {
