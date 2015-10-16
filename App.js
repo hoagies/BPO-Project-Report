@@ -3,6 +3,9 @@ Ext.define('CustomApp', {
     componentCls: 'app',
 	launch: function() {
 		
+		var currentProjectName = context.getProject();
+		console.log('currentProjectName: ',currentProjectName);
+		
 		this.add({
 			xtype: 'rallycombobox',
 			width: 600,
@@ -41,6 +44,11 @@ Ext.define('CustomApp', {
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
 			// context: this.getContext(),
+			context: {
+				projectScopeUp: false,
+				projectScopeDown: false,
+				project: '/project/28269494803'
+			},
 			storeConfig: {
 				project: 'Radian',
 				filters: [this._getFilter()]
