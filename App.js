@@ -51,7 +51,12 @@ Ext.define('CustomApp', {
 			xtype: 'rallycardboard',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
-			context: this.getContext(),
+			// context: this.getContext(),
+			context: {
+				project: project_oid,
+				projectScopeDown: true,
+				projectScopeUp: false
+			},
 			storeConfig: {
 				project: 'Radian',
 				filters: [this._getFilter()]
