@@ -47,6 +47,8 @@ Ext.define('CustomApp', {
 	},
 		
 	_onLoad: function() {
+		var project_oid = '/project/37192747640';
+		
 		this.add({
 			xtype: 'rallycardboard',
 			types: ['PortfolioItem/Feature'],
