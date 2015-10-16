@@ -51,7 +51,7 @@ Ext.define('CustomApp', {
 			},
 			cardConfig: {
 				showIconsAndHighlightBorder: true,
-				editable: true,
+				editable: false,
 				fields: ['PercentDoneByStoryCount'],
 				showAge: true
 			}
