@@ -3,9 +3,12 @@ Ext.define('CustomApp', {
     componentCls: 'app',
 	launch: function() {
 		
-		var currentProjectName = context.getProject();
-		console.log('currentProjectName: ',currentProjectName);
-		
+		// Radian
+		var project_oid = '/project/37192747640';
+		// AIT Sandbox
+		// var project_oid = '/project/28269494803';
+		// console.log('project_oid: ',project_oid);
+
 		this.add({
 			xtype: 'rallycombobox',
 			width: 600,
@@ -27,7 +30,12 @@ Ext.define('CustomApp', {
 				remoteGroup: false,
 				remoteSort: false,
 				remoteFilter: false,
-				limit: Infinity
+				limit: Infinity,
+				context: {
+					project: project_oid,
+					projectScopeDown: true,
+					projectScopeUp: false
+				}
 			},
 			// stateful: false,
 			listeners: {
@@ -43,12 +51,7 @@ Ext.define('CustomApp', {
 			xtype: 'rallycardboard',
 			types: ['PortfolioItem/Feature'],
 			attribute: 'State',
-			// context: this.getContext(),
-			context: {
-				projectScopeUp: false,
-				projectScopeDown: false,
-				project: '/project/28269494803'
-			},
+			context: this.getContext(),
 			storeConfig: {
 				project: 'Radian',
 				filters: [this._getFilter()]
