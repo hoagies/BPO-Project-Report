@@ -5,9 +5,6 @@ Ext.define('CustomApp', {
 		
 		// Radian
 		var project_oid = '/project/37192747640';
-		// AIT Sandbox
-		// var project_oid = '/project/28269494803';
-		// console.log('project_oid: ',project_oid);
 
 		this.add({
 			xtype: 'rallycombobox',
@@ -70,7 +67,7 @@ Ext.define('CustomApp', {
 			cardConfig: {
 				showIconsAndHighlightBorder: false,
 				editable: false,
-				fields: ['PercentDoneByStoryCount'],
+				fields: ['Project','PercentDoneByStoryCount'],
 				showAge: true
 			}
 			// rowConfig: {
