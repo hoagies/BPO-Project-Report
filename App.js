@@ -56,6 +56,7 @@ Ext.define('CustomApp', {
 			id: 'features',
 			xtype: 'rallygridboard',
 			modelNames: ['PortfolioItem/Feature'],
+			toggleState: 'board',
 			context: this.getContext(),
 			storeConfig: {
 				context: {
