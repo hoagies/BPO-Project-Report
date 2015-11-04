@@ -51,13 +51,16 @@ Ext.define('CustomApp', {
 		if (this.down('#features')) {
 			this.down('#features').destroy();
 		}
-		
+
+		var context = this.getContext();
+		var modelNames = ['portfolioitem/feature'];
 		this.add({
-			id: 'features',
 			xtype: 'rallygridboard',
+			context: context,
+			stateful: false,
+			id: 'features',
 			modelNames: ['PortfolioItem/Feature'],
 			toggleState: 'board',
-			context: this.getContext(),
 			storeConfig: {
 				context: {
 					project: project_oid,
@@ -65,11 +68,6 @@ Ext.define('CustomApp', {
 					projectScopeUp: false
 				},
 				filters: [this._getFilter()]
-			},
-			columnConfig: {
-				plugins: [
-					{ptype: 'rallycolumncardcounter'}
-				]
 			},
             cardBoardConfig: {
                 attribute: 'State',
@@ -92,18 +90,19 @@ Ext.define('CustomApp', {
 					ptype: 'rallygridboardfieldpicker',
 					modelNames: ['PortfolioItem/Feature'],
 					headerPosition: 'left'
-					// stateful: true,
-					// stateId: context.getScopedStateId('picker')
+					//// stateful: true,
+					//// stateId: context.getScopedStateId('picker')
 				}, {
                     ptype: 'rallygridboardcustomfiltercontrol',
 					headerPosition: 'left',
                     filterControlConfig: {
 						modelNames: ['PortfolioItem/Feature']
-						// stateful: true,
-						// stateId: context.getScopedStateId('custom-filter-example')
+						////stateful: true,
+						////stateId: context.getScopedStateId('custom-filter-example')
 					}
                 }
-			]
+			],
+			height: this.getHeight()
 		});
 	},
 		
